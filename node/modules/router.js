@@ -1,42 +1,51 @@
 var express = require('express')
 var app = express()
-
+var projects = require('./projects.js');
 
 var routes = [
   {
     location: '/',
     name: 'home',
     baseFile: 'index',
-    data: {
-      test: 123
-    }
   },
   {
-    location: '/:bedrijf',
-    name: 'details',
-    baseFile: 'index',
-    data: {
-      test: 123
-    }
+    location: '/projects',
+    name: 'overzicht',
+    baseFile: 'projects',
+    data: projects
   }
 ];
-
+//create detail page for every project ther is
+let allUrl = [];
+for(let i = 0; i < projects.length; i++){
+  if(!allUrl.includes(projects[i].url)){
+    allUrl.push(projects[i].url);
+    projects[i].id = i;
+    let location = '/projects/' + projects[i].url;
+    let obj = {
+      location: location,
+      name: 'detail',
+      baseFile: 'detailProject',
+      data: projects[i],
+    }
+    routes.push(obj);
+  }
+}
 
 const router = {
   init: function(){
     router.settings();
-
     for(let i = 0; i < routes.length; i++){
-      if(routes[i].data){
+      if(routes[i].baseFile){
+        console.log(routes[i].location);
         app.get(routes[i].location, function(req, res){
           var routePath = routes[i].baseFile + '.ejs';
-          res.render(routePath, {session: req.session});
+          res.render(routePath, {data: routes[i].data});
         });
       }
       else{
-        app.get(routes[i].location, function(req, res){
-          res.send('hello world');
-        });
+        res.status(404);
+        res.render('404.ejs', {url: req.url});
       }
     }
   },
