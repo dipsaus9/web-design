@@ -7,12 +7,18 @@ var routes = [
     location: '/',
     name: 'home',
     baseFile: 'index',
+    data: projects[0]
   },
   {
     location: '/projects',
     name: 'overzicht',
     baseFile: 'projects',
     data: projects
+  },
+  {
+    location: '/contact',
+    name: 'Contact',
+    baseFile: 'contact',
   }
 ];
 //create detail page for every project ther is
@@ -37,7 +43,6 @@ const router = {
     router.settings();
     for(let i = 0; i < routes.length; i++){
       if(routes[i].baseFile){
-        console.log(routes[i].location);
         app.get(routes[i].location, function(req, res){
           var routePath = routes[i].baseFile + '.ejs';
           res.render(routePath, {data: routes[i].data});
