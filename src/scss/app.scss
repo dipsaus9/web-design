@@ -1,0 +1,64 @@
+@import
+  "components/functions",
+  "components/reset",
+  "components/colors",
+  "components/typhography";
+
+@import
+  "elements/navigation";
+body{ padding: 0; }
+main{ margin-top: 80px; background: $background; }
+
+section{
+  &.bio{ padding: 60px 0 100px;
+    .bio{
+      &-image{ position: absolute; right: 25px; top: 45px; width: calc(100% - 40rem - 25px); height: 100%; display: flex; justify-content: center; align-items: flex-start;
+        &_photo{ display: block; width: 220px; height: 220px; border-radius: 50%; background-image: url('../images/me.jpg'); background-position: center center; background-size: cover; }
+      }
+      &-info{ width: 100%; max-width: 40rem; padding: 0px 20px;
+        h3{ color: $grey-black; font-weight: $font-book; font-size: rem(20); }
+        h1{ padding: 10px 15px; font-size: 3.5rem; letter-spacing: .5px; }
+        p{ line-height: 1.5; color: $text; padding: 10px 0; }
+      }
+    }
+  }
+  &.experience{ padding: 60px 0;
+    .experience{
+      &-header{ width: 100%; display: flex; justify-content: center; flex-direction: column; align-items: center;
+        h2{ font-size: 2.5rem; font-weight: $font-book; }
+        p{ max-width: 40rem; line-height: 1.5; color: $text; padding: 10px 0; text-align: center; }
+      }
+      &-container{ width: 100%; max-width: 50em; margin: 35px auto; padding: 30px; box-shadow: 0px 0px 5px 0px rgba(0,0,0, .2);
+        ul{ display: flex; width: 100%; flex-wrap: wrap;
+          li{ width: 50%; position: relative; padding: 10px 0;
+            &:before{ content: ''; width: 7px; height: 2px; background: $grey-black; position: absolute; display: block; left: 0; top: 24px; }
+            p{ margin: 0; left: 20px; position: relative; font-size: rem(14); font-weight: $font-book; color: $grey-black; font-style: italic;
+              &:nth-of-type(2){ font-weight: $font-bold; }
+            }
+            h3{ font-weight: $font-book; position: relative; left: 20px; color: $text; font-size: rem(22); color: $darkGreen;  padding-bottom: 2px; }
+          }
+          &.work{
+            li{
+              h3{ color: $poep; }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.project-featured{ padding: 80px 0 60px;
+    .project-featured{
+      &_image{ width: 80%; margin: 0 auto; background-image: url('../images/safari.png'); background-size: 100%; position: relative;
+        &-photo{ width: 100%; background-image: url('../images/bozFull.png'); background-size: 100%; height: calc(100% - 47px); position: absolute; left: 0; top: 47px; background-position: 0px 0px; animation: scroll 6s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-delay: 1s; }
+      }
+    }
+  }
+}
+.row{ max-width: 75rem; display: flex; justify-content: flex-start; flex-wrap: wrap; width: 100%; position: relative; margin: 0 auto; flex-direction: row; }
+
+@keyframes scroll {
+  0%{ background-position: 0px 0%; }
+  20%{ background-position: 0px 0%; }
+  90%{ background-position: 0px 100%; }
+  100%{ background-position: 0px 100%; }
+}

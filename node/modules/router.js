@@ -17,8 +17,8 @@ var routes = [
   },
   {
     location: '/contact',
-    name: 'Contact',
-    baseFile: 'contact',
+    name: 'contact',
+    baseFile: 'contact'
   }
 ];
 //create detail page for every project ther is
@@ -32,12 +32,11 @@ for(let i = 0; i < projects.length; i++){
       location: location,
       name: 'detail',
       baseFile: 'detailProject',
-      data: projects[i],
+      data: projects[i]
     }
     routes.push(obj);
   }
 }
-
 const router = {
   init: function(){
     router.settings();
@@ -45,12 +44,10 @@ const router = {
       if(routes[i].baseFile){
         app.get(routes[i].location, function(req, res){
           var routePath = routes[i].baseFile + '.ejs';
-          res.render(routePath, {data: routes[i].data});
+          res.render(routePath, routes[i]);
         });
       }
       else{
-        res.status(404);
-        res.render('404.ejs', {url: req.url});
       }
     }
   },

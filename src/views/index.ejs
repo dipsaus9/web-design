@@ -1,74 +1,145 @@
+<% var headerData = name; %>
 <% include base/head.ejs %>
 <main>
   <section class="bio">
-    <h1>Dennis Spierenburg</h1>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-    </p>
-    <div class="experience">
-      <h2>Ervaring</h2>
-      <p>
-        Mijn werk ervaring is erg breed. Hieronder beschrijf ik een lijstje met talen / systemen waarmee ik heb gewerkt.
-      </p>
-      <h3>Kenniss</h3>
-      <ul>
-        <li>
-          HTML
-        </li>
-        <li>
-          CSS
-        </li>
-        <li>
-          Javascript
-        </li>
-        <li>
-          Node.js
-        </li>
-        <li>
-          PHP
-        </li>
-        <li>
-          MySQL
-        </li>
-        <li>
-          WordPress
-        </li>
-        <li>
-          Concrete
-        </li>
-      </ul>
-    </div>
-    <div class="work">
-      <h3>Werk ervaring</h3>
-      <p>
-        Hier beschrijf ik waar ik werkzaam ben geweest in mijn carriere.
-      </p>
-      <ul>
-        <li>
-          ZZP
-        </li>
-        <li>
-          Matise
-        </li>
-        <li>
-          SpaSereen
-        </li>
-      </ul>
-      <h3>Diploma's</h3>
-      <ul>
-        <li>
-          Communication & Multimedia Design Propedeuse
-        </li>
-        <li>
-          HAVO Diploma
-        </li>
-      </ul>
-    </div>
-    <div class="project-featured">
-      <h2><%= data.name %></h2>
-      <a href="/projects/<%= data.url %>">Link</a>
-      <a href="/projects">Overzicht</a>
+    <div class="row">
+      <div class="bio-image">
+        <div class="bio-image_photo">
+          <img src="" />
+        </div>
+      </div>
+      <div class="bio-info">
+        <h3>Biografie:</h3>
+        <h1>Dennis Spierenburg</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+      </div>
     </div>
   </section>
+  <section class="experience">
+    <div class="row">
+      <div class="experience-header">
+          <h2>Vaardigheden</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+      </div>
+      <div class="experience-container">
+        <ul>
+          <li>
+            <h3>HTML</h3>
+            <p>
+              10/10
+            </p>
+          </li>
+          <li>
+            <h3>CSS</h3>
+            <p>
+              10/10
+            </p>
+          </li>
+          <li>
+            <h3>JavaScript</h3>
+            <p>
+              9/10
+            </p>
+          </li>
+          <li>
+            <h3>PHP</h3>
+            <p>
+              7/10
+            </p>
+          </li>
+          <li>
+            <h3>Node.js</h3>
+            <p>
+              6/10
+            </p>
+          </li>
+          <li>
+            <h3>MySQL</h3>
+            <p>
+              5/10
+            </p>
+          </li>
+          <li>
+            <h3>WordPress</h3>
+            <p>
+              8/10
+            </p>
+          </li>
+          <li>
+            <h3>Concrete</h3>
+            <p>
+              7/10
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="experience">
+    <div class="row">
+      <div class="experience-header">
+          <h2>Werk ervaring</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+      </div>
+      <div class="experience-container">
+        <ul class="work">
+          <li>
+            <h3>ZZP</h3>
+            <p>
+              01/09/2017 - Heden
+            </p>
+            <p>
+              Frontend Developer
+            </p>
+          </li>
+          <li>
+            <h3>Matise</h3>
+            <p>
+              18/04/2017 - 31/08/2017
+            </p>
+            <p>
+              Frontend Developer
+            </p>
+          </li>
+          <li>
+            <h3>SpaSereen</h3>
+            <p>
+              01/01/2012 - 03/12/2017
+            </p>
+            <p>
+              Hulpkok
+            </p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="project-featured">
+    <div class="project-featured-container row">
+      <div class="project-featured_image">
+        <div class="project-featured_image-photo">
+
+        </div>
+        <div class="projects-featured_image-info">
+          <h2><%= data.name %></h2>
+          <h3><%= data.rol %></h3>
+        </div>
+      </div>
+      <div class="project-featured_links">
+        <a class="overview" href="/projects">Overzicht</a>
+        <a class="direct" href="/projects/<%= data.url %>">Lees meer <span class="hide">over <%= data.name %></span></a>
+      </div>
+    </div>
+  </div>
+</section>
 </main>
 <% include base/footer.ejs %>
