@@ -1,23 +1,31 @@
-if(document.querySelector('.project-featured_image')){
+if(document.querySelector('.ratio')){
   var ratioElement = document.querySelector('.project-featured_image');
-  setTimeout(function(){
-    ratio();
-  }, 1);
+  ratio();
   window.onresize = function(){
     ratio();
   }
-  var elementDistance = document.querySelector('.project-featured-container');
-  var distance = elementDistance.offsetTop;
-  window.addEventListener('scroll', function(e){
-    var offset = window.pageYOffset;
-    if((offset) > distance){
-      elementDistance.classList.add('active');
-    }
-  });
+  if(document.querySelector('.project-featured-container')){
+    var elementDistance = document.querySelector('.project-featured-container');
+    var distance = elementDistance.offsetTop;
+    document.addEventListener("DOMContentLoaded", function(event) {
+      window.addEventListener('scroll', function(e){
+        var offset = window.pageYOffset;
+        if((offset + 300) > distance){
+          elementDistance.classList.add('active');
+        }
+      });
+      var offset = window.pageYOffset;
+      if((offset + 300) > distance){
+        elementDistance.classList.add('active');
+      }
+    });
+  }
 }
 function ratio(){
-  var ratioElement = document.querySelector('.project-featured_image')
-  var width = ratioElement.offsetWidth;
-  var height = width * 9 / 16;
-  ratioElement.setAttribute("style", "height: " + height + "px");
+  var ratioElement = document.querySelectorAll('.ratio');
+  for(let i = 0; i < ratioElement.length; i++){
+    var width = ratioElement[i].offsetWidth;
+    var height = width * 9 / 16;
+    ratioElement[i].setAttribute("style", "height: " + height + "px");
+  }
 }

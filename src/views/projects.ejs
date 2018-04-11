@@ -3,20 +3,27 @@
 <main>
   <section class="projects">
     <div class="row">
+      <h3>Portfolio:</h3>
+      <h1>Overzicht</h1>
       <% for(var i = 0; i < data.length; i++) {%>
         <div class="projects-single">
-          <h3>Rol: <%= data[i].rol %></h3>
-          <h2><%= data[i].name %></h2>
-        </div>
-        <div class="projects-image">
-          <div class="project-image-photo">
-
+            <div class="projects-header">
+              <h3>Rol: <%= data[i].rol %></h3>
+              <h2><%= data[i].name %></h2>
+            </div>
+            <div class="projects-image ratio">
+              <a href="/projects/<%= data[i].url %>"><span class="visually-hidden">Lees verder over <%= data[i].name %></span>
+                <div class="projects-image-photo" style="background-image: url('<%= data[i].fullImage %>'); ">
+                </div>
+              </a>
+            </div>
+          <div class="projects-info">
+            <p>
+              <%= data[i].korteBeschrijving %>
+            </p>
+            <a href="/projects/<%= data[i].url %>">Lees verder <span class="visually-hidden">over <%= data[i].name %></span></a>
           </div>
         </div>
-        <div class="project-link">
-          <a class="direct" href="/projects/<%= data.url %>">Kijk verder <span class="visually-hidden">over <%= data.name %></span></a>
-        </div>
-        <a href="/projects/<%= data[i].url %>">Link</a>
       <% } %>
     </div>
   </section>
