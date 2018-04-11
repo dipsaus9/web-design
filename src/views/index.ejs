@@ -125,18 +125,18 @@
   </section>
   <section class="project-featured">
     <div class="project-featured-container row">
+      <div class="project-featured_image-info">
+        <h3>Rol: <%= data.rol %></h3>
+        <h2><%= data.name %></h2>
+      </div>
       <div class="project-featured_image">
         <div class="project-featured_image-photo">
 
         </div>
-        <div class="projects-featured_image-info">
-          <h2><%= data.name %></h2>
-          <h3><%= data.rol %></h3>
-        </div>
       </div>
       <div class="project-featured_links">
-        <a class="overview" href="/projects">Overzicht</a>
-        <a class="direct" href="/projects/<%= data.url %>">Lees meer <span class="hide">over <%= data.name %></span></a>
+        <a class="direct" href="/projects/<%= data.url %>">Kijk verder <span class="visually-hidden">over <%= data.name %></span></a>
+        <a class="overview" href="/projects">Bekijk overzicht</a>
       </div>
     </div>
   </div>

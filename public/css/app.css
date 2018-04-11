@@ -148,7 +148,8 @@ body {
 
 main {
   margin-top: 80px;
-  background: #f7f7f7; }
+  background: #f7f7f7;
+  min-height: calc(100vh - 80px); }
 
 section.bio {
   padding: 60px 0 100px; }
@@ -178,7 +179,7 @@ section.bio {
       font-weight: 400;
       font-size: 1.25rem; }
     section.bio .bio-info h1 {
-      padding: 10px 15px;
+      padding: 15px 15px;
       font-size: 3.5rem;
       letter-spacing: .5px; }
     section.bio .bio-info p {
@@ -225,7 +226,7 @@ section.experience {
           position: absolute;
           display: block;
           left: 0;
-          top: 24px; }
+          top: 19px; }
         section.experience .experience-container ul li p {
           margin: 0;
           left: 20px;
@@ -248,13 +249,22 @@ section.experience {
         color: #98462A; }
 
 section.project-featured {
-  padding: 80px 0 60px; }
+  padding: 80px 0 120px; }
   section.project-featured .project-featured_image {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     background-image: url("../images/safari.png");
     background-size: 100%;
-    position: relative; }
+    position: relative;
+    border-radius: 5px; }
+    section.project-featured .project-featured_image-info h3 {
+      color: #555555;
+      font-weight: 400;
+      font-size: 1.25rem; }
+    section.project-featured .project-featured_image-info h2 {
+      padding: 15px 15px;
+      font-size: 3rem;
+      letter-spacing: .5px; }
     section.project-featured .project-featured_image-photo {
       width: 100%;
       background-image: url("../images/bozFull.png");
@@ -264,10 +274,30 @@ section.project-featured {
       left: 0;
       top: 47px;
       background-position: 0px 0px;
-      animation: scroll 6s infinite;
+      animation: scroll 7s infinite;
       animation-timing-function: ease-in-out;
       animation-direction: alternate;
-      animation-delay: 1s; }
+      animation-delay: .5s;
+      animation-play-state: paused; }
+  section.project-featured .project-featured_links {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column; }
+    section.project-featured .project-featured_links .direct {
+      padding: 20px 30px;
+      background: #17856D;
+      color: #FFF;
+      margin: 0px 15px;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      transform: translateY(-50%); }
+    section.project-featured .project-featured_links .overview {
+      text-decoration: underline; }
+  section.project-featured .project-featured-container.active .project-featured_image-photo {
+    animation-play-state: running; }
 
 .row {
   max-width: 75rem;
@@ -288,3 +318,14 @@ section.project-featured {
     background-position: 0px 100%; }
   100% {
     background-position: 0px 100%; } }
+
+.visually-hidden {
+  position: absolute !important;
+  clip: rect(1px 1px 1px 1px);
+  /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0 !important;
+  border: 0 !important;
+  height: 1px !important;
+  width: 1px !important;
+  overflow: hidden; }

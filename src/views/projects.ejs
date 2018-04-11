@@ -1,10 +1,24 @@
 <% var headerData = name; %>
 <% include base/head.ejs %>
 <main>
-<h1>Projects</h1>
-<% for(var i = 0; i < data.length; i++) {%>
-  <h2><%= data[i].name %></h2>
-  <a href="/projects/<%= data[i].url %>">Link</a>
-<% } %>
+  <section class="projects">
+    <div class="row">
+      <% for(var i = 0; i < data.length; i++) {%>
+        <div class="projects-single">
+          <h3>Rol: <%= data[i].rol %></h3>
+          <h2><%= data[i].name %></h2>
+        </div>
+        <div class="projects-image">
+          <div class="project-image-photo">
+
+          </div>
+        </div>
+        <div class="project-link">
+          <a class="direct" href="/projects/<%= data.url %>">Kijk verder <span class="visually-hidden">over <%= data.name %></span></a>
+        </div>
+        <a href="/projects/<%= data[i].url %>">Link</a>
+      <% } %>
+    </div>
+  </section>
 </main>
 <% include base/footer.ejs %>

@@ -30,7 +30,7 @@ for(let i = 0; i < projects.length; i++){
     let location = '/projects/' + projects[i].url;
     let obj = {
       location: location,
-      name: 'detail',
+      name: 'overzicht',
       baseFile: 'detailProject',
       data: projects[i]
     }

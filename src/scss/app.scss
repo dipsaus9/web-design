@@ -7,7 +7,7 @@
 @import
   "elements/navigation";
 body{ padding: 0; }
-main{ margin-top: 80px; background: $background; }
+main{ margin-top: 80px; background: $background; min-height: calc(100vh - 80px); }
 
 section{
   &.bio{ padding: 60px 0 100px;
@@ -17,7 +17,7 @@ section{
       }
       &-info{ width: 100%; max-width: 40rem; padding: 0px 20px;
         h3{ color: $grey-black; font-weight: $font-book; font-size: rem(20); }
-        h1{ padding: 10px 15px; font-size: 3.5rem; letter-spacing: .5px; }
+        h1{ padding: 15px 15px; font-size: 3.5rem; letter-spacing: .5px; }
         p{ line-height: 1.5; color: $text; padding: 10px 0; }
       }
     }
@@ -31,7 +31,7 @@ section{
       &-container{ width: 100%; max-width: 50em; margin: 35px auto; padding: 30px; box-shadow: 0px 0px 5px 0px rgba(0,0,0, .2);
         ul{ display: flex; width: 100%; flex-wrap: wrap;
           li{ width: 50%; position: relative; padding: 10px 0;
-            &:before{ content: ''; width: 7px; height: 2px; background: $grey-black; position: absolute; display: block; left: 0; top: 24px; }
+            &:before{ content: ''; width: 7px; height: 2px; background: $grey-black; position: absolute; display: block; left: 0; top: 19px; }
             p{ margin: 0; left: 20px; position: relative; font-size: rem(14); font-weight: $font-book; color: $grey-black; font-style: italic;
               &:nth-of-type(2){ font-weight: $font-bold; }
             }
@@ -46,10 +46,25 @@ section{
       }
     }
   }
-  &.project-featured{ padding: 80px 0 60px;
+  &.project-featured{ padding: 80px 0 120px;
     .project-featured{
-      &_image{ width: 80%; margin: 0 auto; background-image: url('../images/safari.png'); background-size: 100%; position: relative;
-        &-photo{ width: 100%; background-image: url('../images/bozFull.png'); background-size: 100%; height: calc(100% - 47px); position: absolute; left: 0; top: 47px; background-position: 0px 0px; animation: scroll 6s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-delay: 1s; }
+      &_image{ width: 90%; margin: 0 auto; background-image: url('../images/safari.png'); background-size: 100%; position: relative; border-radius: 5px;
+        &-info{
+          h3{ color: $grey-black; font-weight: $font-book; font-size: rem(20); }
+          h2{ padding: 15px 15px; font-size: 3rem; letter-spacing: .5px; }
+        }
+        &-photo{ width: 100%; background-image: url('../images/bozFull.png'); background-size: 100%; height: calc(100% - 47px); position: absolute; left: 0; top: 47px; background-position: 0px 0px; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-delay: .5s; animation-play-state: paused; }
+
+      }
+      &_links{ margin: 0; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;
+        .direct{ padding: 20px 30px; background: #17856D; color: #FFF; margin: 0px 15px;  text-transform: uppercase; letter-spacing: .8px; transform: translateY(-50%);
+        }
+        .overview{ text-decoration: underline; }
+      }
+      &-container{
+        &.active{
+          .project-featured_image-photo{ animation-play-state: running; }
+        }
       }
     }
   }
@@ -61,4 +76,14 @@ section{
   20%{ background-position: 0px 0%; }
   90%{ background-position: 0px 100%; }
   100%{ background-position: 0px 100%; }
+}
+.visually-hidden {
+	position: absolute !important;
+	clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+	clip: rect(1px, 1px, 1px, 1px);
+	padding:0 !important;
+	border:0 !important;
+	height: 1px !important;
+	width: 1px !important;
+	overflow: hidden;
 }
