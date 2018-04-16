@@ -15,7 +15,7 @@ if(document.querySelector('.ratio')){
         }
       });
       var offset = window.pageYOffset;
-      if((offset + 300) > distance){
+      if((offset + 200) > distance){
         elementDistance.classList.add('active');
       }
     });
@@ -28,4 +28,18 @@ function ratio(){
     var height = width * 9 / 16;
     ratioElement[i].setAttribute("style", "height: " + height + "px");
   }
+}
+
+if(document.querySelector('.skip-content')){
+  var cursorFocus = function(elem) {
+    var x = window.scrollX, y = window.scrollY;
+    elem.focus();
+    window.scrollTo(0, 0);
+  }
+  var skip = document.querySelector('.skip-content');
+  var focus = document.querySelector('#content');
+  skip.addEventListener('click', function(e){
+    e.preventDefault();
+    cursorFocus(focus);
+  });
 }

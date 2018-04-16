@@ -73,10 +73,10 @@ The home page should be providing information about me. I've devided this into t
     3. Image (animation)
     4. Button
 
-## Detail page
+### Detail page
 
 
-## Contact page
+### Contact page
 
 
 ## Feedback / To Do

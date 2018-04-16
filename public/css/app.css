@@ -100,13 +100,46 @@ header {
   position: fixed;
   background: white;
   top: 0;
-  z-index: 1; }
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 2px 15px -3px rgba(0, 0, 0, 0.25); }
+  header .header-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 100%;
+    padding: 0 25px; }
+  header .skip-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 1rem;
+    line-height: 1;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    padding: 0 25px;
+    width: 270px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0; }
+    header .skip-content:focus {
+      border: 1px solid blue;
+      pointer-events: all;
+      opacity: 1; }
+    @media (max-width: 64rem) {
+      header .skip-content {
+        display: none; } }
   header nav {
     height: 100%;
     display: block;
-    width: 100%;
-    padding: 0 5vw;
-    box-shadow: 0px 2px 15px -3px rgba(0, 0, 0, 0.25); }
+    width: 100%; }
     header nav ul {
       display: flex;
       justify-content: flex-end;
@@ -143,6 +176,9 @@ header {
           header nav ul li a.active:hover, header nav ul li a.active:focus {
             text-decoration: underline; }
 
+html {
+  scroll-behavior: smooth; }
+
 body {
   padding: 0; }
 
@@ -150,6 +186,9 @@ main {
   margin-top: 80px;
   background: #f7f7f7;
   min-height: calc(100vh - 80px); }
+
+a:focus, a:hover {
+  text-decoration: underline; }
 
 section.bio {
   padding: 60px 0 100px; }
@@ -186,6 +225,11 @@ section.bio {
       line-height: 1.5;
       color: #282828;
       padding: 10px 0; }
+  section.bio .quote {
+    width: 100%;
+    padding: 35px 25px; }
+    section.bio .quote blockquote {
+      margin: 35px 25px; }
 
 section.experience {
   padding: 60px 0; }
@@ -409,6 +453,8 @@ section.projects {
           background: white;
           color: #366A98;
           border: 1px solid #366A98; }
+    section.projects .projects-single:hover .projects-image-photo, section.projects .projects-single:focus-within .projects-image-photo {
+      animation-play-state: running; }
 
 .row {
   max-width: 75rem;

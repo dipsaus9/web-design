@@ -6,9 +6,10 @@
 
 @import
   "elements/navigation";
+html{ scroll-behavior: smooth; }
 body{ padding: 0; }
 main{ margin-top: 80px; background: $background; min-height: calc(100vh - 80px); }
-
+a:focus, a:hover{ text-decoration: underline; }
 section{
   &.bio{ padding: 60px 0 100px;
     .bio{
@@ -20,6 +21,9 @@ section{
         h1{ padding: 15px 15px; font-size: 3.5rem; letter-spacing: .5px; }
         p{ line-height: 1.5; color: $text; padding: 10px 0; }
       }
+    }
+    .quote{ width: 100%; padding: 35px 25px;
+      blockquote{ margin: 35px 25px; }
     }
   }
   &.experience{ padding: 60px 0;
@@ -99,6 +103,9 @@ section{
             &:hover, &:focus{ background: white; color: $blue; border: 1px solid $blue; }
           }
         }
+      }
+      &:hover, &:focus-within{
+        .projects-image-photo{ animation-play-state: running; }
       }
     }
   }
