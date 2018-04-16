@@ -37,6 +37,47 @@ I've used this principle by creating large padding and only one action for each 
 
 After each step / state on a website you want to continue reading on the page. With these ideas I wanted to create my website. So after each project you find another project I've been working on. Each step you take would follow by a next step.
 
+
+## Architecture
+Each website should have a good structure. A link should always make sense and each filter must by usefull. Here I'll describe my choices of structure of my website. I'll start with the homepage and my choices.
+
+### Home page
+The home page should be providing information about me. I've devided this into the following order (ordered by logical hierarchy):
+
+1. Biografy
+  1. Subtitle
+  2. Name
+  2. Images
+  3. Small Intro text
+  4. Quote
+2. ~~Skills~~
+3. ~~Work experience~~
+2. Featured project
+  1. Role
+  2. Title
+  3. Image (animation)
+  4. Button
+
+## Projects Page
+1. Filter
+  1. Date
+  2. Role
+  3. Code
+    * WordPress
+    * Node.JS
+    * Concrete
+    * Remaining
+2. Project
+  1. Role
+  2. Title
+  3. Image (animation)
+  4. Button
+
+## Detail page
+
+
+## Contact page
+
 ## Feedback / To Do
 While working on this project I got some feedback from my fellow students, teachers and users. I'll descirbe them here in a to do list.
 
