@@ -13,7 +13,10 @@ header{ height: 80px; width: 100%; position: fixed; background: white; top: 0; z
             &:after{ width: 100%; }
           }
           &.active{
-            &:hover, &:focus{ text-decoration: underline; }
+            &:after{ background: $orange; }
+            &:hover, &:focus{ text-decoration: underline;
+              &:after{ background: $darkGreen; }
+            }
           }
         }
       }

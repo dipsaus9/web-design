@@ -44,7 +44,7 @@ Each website should have a good structure. A link should always make sense and e
 ### Home page
 The home page should be providing information about me. I've devided this into the following order (ordered by logical hierarchy):
 
-1. Biografy
+1. Biography
     1. Subtitle
     2. Name
     2. Images

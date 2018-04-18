@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*  Base values */
 /*  Main values */
 /*  Animation */
@@ -173,8 +174,12 @@ header {
             transition: .3s ease-in-out; }
           header nav ul li a:hover:after, header nav ul li a:focus:after, header nav ul li a.active:after {
             width: 100%; }
+          header nav ul li a.active:after {
+            background: #f18b68; }
           header nav ul li a.active:hover, header nav ul li a.active:focus {
             text-decoration: underline; }
+            header nav ul li a.active:hover:after, header nav ul li a.active:focus:after {
+              background: #379883; }
 
 html {
   scroll-behavior: smooth; }
@@ -191,7 +196,7 @@ a:focus, a:hover {
   text-decoration: underline; }
 
 section.bio {
-  padding: 60px 0 100px; }
+  padding: 60px 0 40px; }
   section.bio .bio-image {
     position: absolute;
     right: 25px;
@@ -213,23 +218,56 @@ section.bio {
     width: 100%;
     max-width: 40rem;
     padding: 0px 20px; }
-    section.bio .bio-info h3 {
+    section.bio .bio-info .subTitle {
       color: #555555;
       font-weight: 400;
       font-size: 1.25rem; }
-    section.bio .bio-info h1 {
+    section.bio .bio-info .title {
       padding: 15px 15px;
       font-size: 3.5rem;
       letter-spacing: .5px; }
     section.bio .bio-info p {
       line-height: 1.5;
       color: #282828;
-      padding: 10px 0; }
+      padding: 10px 0;
+      font-size: 1rem; }
   section.bio .quote {
     width: 100%;
-    padding: 35px 25px; }
+    padding: 35px 0px;
+    margin-left: 0;
+    margin-top: 60px;
+    position: relative;
+    text-align: center; }
     section.bio .quote blockquote {
-      margin: 35px 25px; }
+      margin: 35px 25px;
+      font-size: 1.625rem;
+      line-height: 1.25;
+      letter-spacing: .5px;
+      font-weight: 400;
+      color: #282828;
+      position: relative; }
+      section.bio .quote blockquote:before {
+        content: '“';
+        position: relative;
+        left: 7px; }
+      section.bio .quote blockquote:after {
+        content: '”';
+        position: relative;
+        right: -4px; }
+    section.bio .quote .author {
+      position: absolute;
+      top: calc(100% - 50px);
+      left: 0;
+      width: 100%; }
+      section.bio .quote .author-text {
+        font-size: 1.25rem;
+        color: #555555;
+        text-align: center;
+        position: relative;
+        left: -150px; }
+        section.bio .quote .author-text:before {
+          content: '-';
+          padding-right: 10px; }
 
 section.experience {
   padding: 60px 0; }
@@ -311,11 +349,11 @@ section.project-featured {
       background-position: center bottom;
       background-size: 100%;
       background-repeat: no-repeat; }
-    section.project-featured .project-featured_image-info h3 {
+    section.project-featured .project-featured_image-info .subTitle {
       color: #555555;
       font-weight: 400;
       font-size: 1.25rem; }
-    section.project-featured .project-featured_image-info h2 {
+    section.project-featured .project-featured_image-info .title {
       padding: 15px 15px;
       font-size: 3rem;
       letter-spacing: .5px; }
@@ -331,6 +369,8 @@ section.project-featured {
       animation-timing-function: ease-in-out;
       animation-direction: alternate;
       animation-play-state: paused; }
+      section.project-featured .project-featured_image-photo p {
+        text-indent: -9999px; }
   section.project-featured .project-featured_links {
     margin: 0;
     display: flex;
@@ -354,6 +394,8 @@ section.project-featured {
         border: 1px solid #366A98; }
     section.project-featured .project-featured_links .overview {
       text-decoration: underline; }
+      section.project-featured .project-featured_links .overview:focus {
+        border: 1px solid #366A98; }
   section.project-featured .project-featured-container.active .project-featured_image-photo {
     animation-play-state: running; }
 
@@ -423,6 +465,8 @@ section.projects {
         animation-timing-function: ease-in-out;
         animation-direction: alternate;
         animation-play-state: paused; }
+        section.projects .projects-single .projects-image-photo p {
+          text-indent: -9999px; }
       section.projects .projects-single .projects-image a:focus .projects-image-photo {
         animation-play-state: running;
         border: 2px solid #366A98; }

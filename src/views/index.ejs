@@ -9,8 +9,8 @@
         </div>
       </div>
       <div class="bio-info">
-        <h3>Biografie:</h3>
-        <h1>Dennis Spierenburg</h1>
+        <h1 class="subTitle">Biografie:</h3>
+        <h2 class="title">Dennis Spierenburg</h1>
         <p>
           Ik ben een 21 jarige student wonend in Amsterdam. Op dit moment studeer ik Communication and Multimedia Design aan de Hogeschool van Amsterdam.
           Naast mijn studie heb ik een passie voor het maken van applicaties / websites en werk ik dit graag uit. Op deze website beschrijf ik een aantal projecten waar ik aan heb gewerkt.
@@ -18,8 +18,11 @@
       </div>
       <div class="quote">
         <blockquote lang="en">
-          If you don't challenge me, don't bother me
+          If you won't challenge me, don't bother me
         </blockquote>
+        <div class="author">
+          <small class="author-text">Dipsaus</small>
+        </div>
       </div>
     </div>
   </section>
@@ -129,17 +132,16 @@
   <section class="project-featured">
     <div class="project-featured-container row">
       <div class="project-featured_image-info">
-        <h3>Rol: <%= data.rol %></h3>
-        <h2><%= data.name %></h2>
+        <h1 class="subTitle" lang="en">Featured project:</h3>
+        <h2 class="title"><%= data.name %></h2>
       </div>
       <div class="project-featured_image ratio">
-        <div class="project-featured_image-photo" style="background-image: url('<%= data.fullImage %>'); ">
-
-        </div>
+        <span role="img" aria-label="Foto van de website van <%= data.name %>. Op deze foto is de volledige home page te zien in een kader." class="project-featured_image-photo" style="background-image: url('<%= data.fullImage %>'); ">
+        </span>
       </div>
       <div class="project-featured_links">
-        <a class="direct" href="/projects/<%= data.url %>">Kijk verder <span class="visually-hidden">over <%= data.name %></span></a>
-        <a class="overview" href="/projects">Bekijk overzicht</a>
+        <a class="direct" href="/projects/<%= data.url %>">Lees meer <span class="visually-hidden">over <%= data.name %></span></a>
+        <a class="overview" href="/projects">Bekijk overzicht <span class="visually-hidden">van alle projecten</span></a>
       </div>
     </div>
   </div>
