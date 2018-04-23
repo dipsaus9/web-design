@@ -28,6 +28,8 @@ function ratio(){
     var width = ratioElement[i].offsetWidth;
     var height = width * 9 / 16;
     ratioElement[i].setAttribute("style", "height: " + height + "px");
+    let html = document.getElementsByTagName('html')[0];
+    html.setAttribute("style", "--height: " + height + "px");
   }
 }
 
@@ -35,7 +37,7 @@ if(document.querySelector('.skip-content')){
   var cursorFocus = function(elem) {
     var x = window.scrollX, y = window.scrollY;
     elem.focus();
-    window.scrollTo(0, 0);
+    // window.scrollTo(0, 0);
   }
   var skip = document.querySelector('.skip-content');
   var focus = document.querySelector('#content');

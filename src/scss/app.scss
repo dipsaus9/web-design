@@ -68,10 +68,9 @@ section{
           .subTitle{ color: $grey-black; font-weight: $font-book; font-size: rem(20); }
           .title{ padding: 15px 15px; font-size: 3rem; letter-spacing: .5px; }
         }
-        figure{ width: 100%; height: calc(100% - 40px); position: absolute; left: 0; top: 40px; margin: 0; overflow: hidden;
-          img{ width: 100%; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-play-state: paused; position: absolute; }
-          p{ text-indent: -9999px; }
-        }
+        figure{ width: 100%; height: calc(100% - 40px); position: absolute; left: 0; top: 40px; margin: 0; overflow: hidden; }
+        img{ width: 100%; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-play-state: paused; position: absolute; transform: translateZ(0);}
+        p{ text-indent: -9999px; }
         // &:hover, &:focus-within{
         //   img{ animation-play-state: running; }
         // }
@@ -103,15 +102,15 @@ section{
         }
         &-image{ width: 100%; position: relative; position: relative; border-radius: 5px; box-shadow: 0px 0px 10px 2px rgba(0,0,0, .1);  transition: .3s ease-in-out;
           &:after{ content: ''; width: 100%; height: 40px; top: 0; position: absolute; left: 0; display: block; background-image: url('../images/safari2.png'); background-position: center bottom; background-size: 100%; background-repeat: no-repeat; }
-          &-photo{ width: 100%; background-size: 100%; height: calc(100% - 40px); position: absolute; left: 0; top: 40px; background-position: 0px 0px; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-play-state: paused;
-            p{ text-indent: -9999px; }
-          }
+          p{ text-indent: -9999px; }
+          figure{ width: 100%; height: calc(100% - 40px); position: absolute; left: 0; top: 40px; margin: 0; overflow: hidden; }
+          img{ width: 100%; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-play-state: paused; position: absolute; transform: translateZ(0);}
           a{
             &:focus{
-              .projects-image-photo{ animation-play-state: running;  border: 2px solid $blue;}
+              img{ animation-play-state: running;  border: 2px solid $blue;}
             }
             &:hover{
-              .projects-image-photo{ animation-play-state: running; }
+              img{ animation-play-state: running; }
             }
           }
           &:hover{ box-shadow: 0px 0px 10px 2px rgba(0,0,0, .3);  }
@@ -124,18 +123,20 @@ section{
         }
       }
       &:hover, &:focus-within{
-        .projects-image-photo{ animation-play-state: running; }
+        img{ animation-play-state: running; }
       }
     }
   }
 }
 .row{ max-width: 75rem; display: flex; justify-content: flex-start; flex-wrap: wrap; width: 100%; position: relative; margin: 0 auto; flex-direction: row; }
-
+:root{
+  --height: 500px;
+}
 @keyframes scroll {
-  0%{ top: 0; }
-  5%{ top: 0; }
-  95%{ top: -100%; }
-  1000%{ top: -100%; }
+  0%{ transform: translateY(0); }
+  5%{  transform: translateY(0);  }
+  95%{  transform: translateY(-100%) translateY(var(--height));  }
+  100%{  transform: translateY(-100%) translateY(var(--height)); }
 }
 .visually-hidden {
 	position: absolute !important;

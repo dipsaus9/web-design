@@ -368,15 +368,16 @@ section.project-featured {
       top: 40px;
       margin: 0;
       overflow: hidden; }
-      section.project-featured .project-featured_image figure img {
-        width: 100%;
-        animation: scroll 7s infinite;
-        animation-timing-function: ease-in-out;
-        animation-direction: alternate;
-        animation-play-state: paused;
-        position: absolute; }
-      section.project-featured .project-featured_image figure p {
-        text-indent: -9999px; }
+    section.project-featured .project-featured_image img {
+      width: 100%;
+      animation: scroll 7s infinite;
+      animation-timing-function: ease-in-out;
+      animation-direction: alternate;
+      animation-play-state: paused;
+      position: absolute;
+      transform: translateZ(0); }
+    section.project-featured .project-featured_image p {
+      text-indent: -9999px; }
   section.project-featured .project-featured_links {
     margin: 0;
     display: flex;
@@ -460,24 +461,28 @@ section.projects {
         background-position: center bottom;
         background-size: 100%;
         background-repeat: no-repeat; }
-      section.projects .projects-single .projects-image-photo {
+      section.projects .projects-single .projects-image p {
+        text-indent: -9999px; }
+      section.projects .projects-single .projects-image figure {
         width: 100%;
-        background-size: 100%;
         height: calc(100% - 40px);
         position: absolute;
         left: 0;
         top: 40px;
-        background-position: 0px 0px;
+        margin: 0;
+        overflow: hidden; }
+      section.projects .projects-single .projects-image img {
+        width: 100%;
         animation: scroll 7s infinite;
         animation-timing-function: ease-in-out;
         animation-direction: alternate;
-        animation-play-state: paused; }
-        section.projects .projects-single .projects-image-photo p {
-          text-indent: -9999px; }
-      section.projects .projects-single .projects-image a:focus .projects-image-photo {
+        animation-play-state: paused;
+        position: absolute;
+        transform: translateZ(0); }
+      section.projects .projects-single .projects-image a:focus img {
         animation-play-state: running;
         border: 2px solid #366A98; }
-      section.projects .projects-single .projects-image a:hover .projects-image-photo {
+      section.projects .projects-single .projects-image a:hover img {
         animation-play-state: running; }
       section.projects .projects-single .projects-image:hover {
         box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.3); }
@@ -504,7 +509,7 @@ section.projects {
           background: white;
           color: #366A98;
           border: 1px solid #366A98; }
-    section.projects .projects-single:hover .projects-image-photo, section.projects .projects-single:focus-within .projects-image-photo {
+    section.projects .projects-single:hover img, section.projects .projects-single:focus-within img {
       animation-play-state: running; }
 
 .row {
@@ -517,15 +522,18 @@ section.projects {
   margin: 0 auto;
   flex-direction: row; }
 
+:root {
+  --height: 500px; }
+
 @keyframes scroll {
   0% {
-    top: 0; }
+    transform: translateY(0); }
   5% {
-    top: 0; }
+    transform: translateY(0); }
   95% {
-    top: -100%; }
-  1000% {
-    top: -100%; } }
+    transform: translateY(-100%) translateY(var(--height)); }
+  100% {
+    transform: translateY(-100%) translateY(var(--height)); } }
 
 .visually-hidden {
   position: absolute !important;
