@@ -14,7 +14,9 @@ section{
   &.bio{ padding: 60px 0 40px;
     .bio{
       &-image{ position: absolute; right: 25px; top: 45px; width: calc(100% - 40rem - 25px); height: 100%; display: flex; justify-content: center; align-items: flex-start;
-        &_photo{ display: block; width: 220px; height: 220px; border-radius: 50%; background-image: url('../images/me.jpg'); background-position: center center; background-size: cover; }
+        &_photo{ display: block; width: 220px; height: 220px; border-radius: 50%; overflow: hidden; position: relative;
+          img{ width: 100%; height: auto; border-radius: 50%; }
+        }
       }
       &-info{ width: 100%; max-width: 40rem; padding: 0px 20px;
         .subTitle{ color: $grey-black; font-weight: $font-book; font-size: rem(20); }
@@ -66,9 +68,13 @@ section{
           .subTitle{ color: $grey-black; font-weight: $font-book; font-size: rem(20); }
           .title{ padding: 15px 15px; font-size: 3rem; letter-spacing: .5px; }
         }
-        &-photo{ width: 100%; background-size: 100%; height: calc(100% - 40px); position: absolute; left: 0; top: 40px; background-position: 0px 0px; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-play-state: paused;
+        figure{ width: 100%; height: calc(100% - 40px); position: absolute; left: 0; top: 40px; margin: 0; overflow: hidden;
+          img{ width: 100%; animation: scroll 7s infinite; animation-timing-function: ease-in-out; animation-direction: alternate; animation-play-state: paused; position: absolute; }
           p{ text-indent: -9999px; }
         }
+        // &:hover, &:focus-within{
+        //   img{ animation-play-state: running; }
+        // }
       }
       &_links{ margin: 0; display: flex; justify-content: center; align-items: center; width: 100%; flex-direction: column;
         .direct{ padding: 20px 30px; background: $blue; color: #FFF; margin: 0px 15px;  text-transform: uppercase; letter-spacing: .8px; transform: translateY(-50%); transition: .3s ease-in-out; border: 1px solid $blue;
@@ -80,20 +86,20 @@ section{
       }
       &-container{
         &.active{
-          .project-featured_image-photo{ animation-play-state: running; }
+          img{ animation-play-state: running; }
         }
       }
     }
   }
   &.projects{ padding: 60px 0;
     .row{ flex-direction: row; flex-direction: column; justify-content: center; max-width: calc(50rem) ; }
-    h1{ padding: 15px 35px; font-size: 3rem; letter-spacing: .5px; display: block; width: 100%; margin-bottom: 50px; }
-    h3{ color: $grey-black; font-weight: $font-book; font-size: rem(20); padding-left: 20px; }
+    .title{ padding: 15px 35px; font-size: 3rem; letter-spacing: .5px; display: block; width: 100%; margin-bottom: 50px; }
+    .subTitle{ color: $grey-black; font-weight: $font-book; font-size: rem(20); padding-left: 20px; }
     .projects-single{ padding: 40px 40px 0; width: 100%; position: relative; margin: 20px 0; border: 1px solid rgba(0,0,0, .2); background: darken($background, 3%);
       .projects{
         &-header{
-          h3{ color: $grey-black; font-weight: $font-book; font-size: rem(16); padding: 0; }
-          h2{ padding: 10px 15px 20px; font-size: 2.5rem; letter-spacing: .5px; }
+          .subTitle{ color: $grey-black; font-weight: $font-book; font-size: rem(16); padding: 0; }
+          .title{ padding: 10px 15px 20px; font-size: 2.5rem; letter-spacing: .5px; margin-bottom: 0; }
         }
         &-image{ width: 100%; position: relative; position: relative; border-radius: 5px; box-shadow: 0px 0px 10px 2px rgba(0,0,0, .1);  transition: .3s ease-in-out;
           &:after{ content: ''; width: 100%; height: 40px; top: 0; position: absolute; left: 0; display: block; background-image: url('../images/safari2.png'); background-position: center bottom; background-size: 100%; background-repeat: no-repeat; }
@@ -126,10 +132,10 @@ section{
 .row{ max-width: 75rem; display: flex; justify-content: flex-start; flex-wrap: wrap; width: 100%; position: relative; margin: 0 auto; flex-direction: row; }
 
 @keyframes scroll {
-  0%{ background-position: 0px 0%; }
-  5%{ background-position: 0px 0%; }
-  95%{ background-position: 0px 100%; }
-  100%{ background-position: 0px 100%; }
+  0%{ top: 0; }
+  5%{ top: 0; }
+  95%{ top: -100%; }
+  1000%{ top: -100%; }
 }
 .visually-hidden {
 	position: absolute !important;

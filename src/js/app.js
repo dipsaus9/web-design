@@ -43,3 +43,13 @@ if(document.querySelector('.skip-content')){
     cursorFocus(focus);
   });
 }
+
+let allLinks = document.querySelectorAll('main a');
+
+for(let i = 0; i < allLinks.length; i++){
+  allLinks[i].addEventListener('focus', function(e){
+    var scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
+    let target = e.target;
+    let height = e.target.offsetHeight;
+  });
+}

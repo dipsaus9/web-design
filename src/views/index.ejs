@@ -5,7 +5,7 @@
     <div class="row">
       <div class="bio-image">
         <div class="bio-image_photo">
-          <img src="" />
+          <img src="/images/me.jpg" alt="Foto van Dennis Spierenburg"/>
         </div>
       </div>
       <div class="bio-info">
@@ -136,8 +136,12 @@
         <h2 class="title"><%= data.name %></h2>
       </div>
       <div class="project-featured_image ratio">
-        <span role="img" aria-label="Foto van de website van <%= data.name %>. Op deze foto is de volledige home page te zien in een kader." class="project-featured_image-photo" style="background-image: url('<%= data.fullImage %>'); ">
-        </span>
+        <figure>
+          <img alt="Foto van de website van <%= data.name %>. Op deze foto is de volledige home page te zien in een kader." src="<%= data.fullImage %>"/>
+          <figcaption class="visaully-hidden">
+            Dit figuur is een representatie van de home page van <%= data.name %>. De home page van deze website bevat een map met alle locaties van de huizen die op dit moment te koop of te huur zijn in de gemeente Bergen op Zoom. Ook wordt hier beschreven hoe duur deze huizen zijn waarna je vervolgens verder kan kijken op een overzicht pagina.
+          </figcaption>
+        </figure>
       </div>
       <div class="project-featured_links">
         <a class="direct" href="/projects/<%= data.url %>">Lees meer <span class="visually-hidden">over <%= data.name %></span></a>

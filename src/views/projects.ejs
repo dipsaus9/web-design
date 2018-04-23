@@ -3,19 +3,24 @@
 <main tabindex="-1" id="content" >
   <section class="projects">
     <div class="row">
-      <h3>Portfolio:</h3>
-      <h1>Overzicht</h1>
+      <h1 class="subTitle">Portfolio:</h3>
+      <h2 class="title">Overzicht</h1>
       <% for(var i = 0; i < data.length; i++) {%>
-        <div class="projects-single">
+        <article class="projects-single">
             <div class="projects-header">
-              <h3>Rol: <%= data[i].rol %></h3>
-              <h2><%= data[i].name %></h2>
+              <h2 class="subTitle">Rol: <%= data[i].rol %></h3>
+              <h1 class="title"><%= data[i].name %></h2>
+              <div class="tags">
+                <ul>
+                  <li>
+                    Test
+                  </li>
+                </ul>
+              </div>
             </div>
             <div class="projects-image ratio">
-              <a href="/projects/<%= data[i].url %>"><span class="visually-hidden">Lees verder over <%= data[i].name %></span>
-                <div class="projects-image-photo" style="background-image: url('<%= data[i].fullImage %>'); ">
-                </div>
-              </a>
+              <div class="projects-image-photo" style="background-image: url('<%= data[i].fullImage %>'); ">
+              </div>
             </div>
           <div class="projects-info">
             <p>
@@ -23,7 +28,7 @@
             </p>
             <a href="/projects/<%= data[i].url %>">Lees verder <span class="visually-hidden">over <%= data[i].name %></span></a>
           </div>
-        </div>
+        </article>
       <% } %>
     </div>
   </section>

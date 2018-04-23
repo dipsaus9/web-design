@@ -211,9 +211,12 @@ section.bio {
       width: 220px;
       height: 220px;
       border-radius: 50%;
-      background-image: url("../images/me.jpg");
-      background-position: center center;
-      background-size: cover; }
+      overflow: hidden;
+      position: relative; }
+      section.bio .bio-image_photo img {
+        width: 100%;
+        height: auto;
+        border-radius: 50%; }
   section.bio .bio-info {
     width: 100%;
     max-width: 40rem;
@@ -357,19 +360,22 @@ section.project-featured {
       padding: 15px 15px;
       font-size: 3rem;
       letter-spacing: .5px; }
-    section.project-featured .project-featured_image-photo {
+    section.project-featured .project-featured_image figure {
       width: 100%;
-      background-size: 100%;
       height: calc(100% - 40px);
       position: absolute;
       left: 0;
       top: 40px;
-      background-position: 0px 0px;
-      animation: scroll 7s infinite;
-      animation-timing-function: ease-in-out;
-      animation-direction: alternate;
-      animation-play-state: paused; }
-      section.project-featured .project-featured_image-photo p {
+      margin: 0;
+      overflow: hidden; }
+      section.project-featured .project-featured_image figure img {
+        width: 100%;
+        animation: scroll 7s infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+        animation-play-state: paused;
+        position: absolute; }
+      section.project-featured .project-featured_image figure p {
         text-indent: -9999px; }
   section.project-featured .project-featured_links {
     margin: 0;
@@ -396,7 +402,7 @@ section.project-featured {
       text-decoration: underline; }
       section.project-featured .project-featured_links .overview:focus {
         border: 1px solid #366A98; }
-  section.project-featured .project-featured-container.active .project-featured_image-photo {
+  section.project-featured .project-featured-container.active img {
     animation-play-state: running; }
 
 section.projects {
@@ -406,14 +412,14 @@ section.projects {
     flex-direction: column;
     justify-content: center;
     max-width: calc(50rem); }
-  section.projects h1 {
+  section.projects .title {
     padding: 15px 35px;
     font-size: 3rem;
     letter-spacing: .5px;
     display: block;
     width: 100%;
     margin-bottom: 50px; }
-  section.projects h3 {
+  section.projects .subTitle {
     color: #555555;
     font-weight: 400;
     font-size: 1.25rem;
@@ -425,15 +431,16 @@ section.projects {
     margin: 20px 0;
     border: 1px solid rgba(0, 0, 0, 0.2);
     background: #efefef; }
-    section.projects .projects-single .projects-header h3 {
+    section.projects .projects-single .projects-header .subTitle {
       color: #555555;
       font-weight: 400;
       font-size: 1rem;
       padding: 0; }
-    section.projects .projects-single .projects-header h2 {
+    section.projects .projects-single .projects-header .title {
       padding: 10px 15px 20px;
       font-size: 2.5rem;
-      letter-spacing: .5px; }
+      letter-spacing: .5px;
+      margin-bottom: 0; }
     section.projects .projects-single .projects-image {
       width: 100%;
       position: relative;
@@ -512,13 +519,13 @@ section.projects {
 
 @keyframes scroll {
   0% {
-    background-position: 0px 0%; }
+    top: 0; }
   5% {
-    background-position: 0px 0%; }
+    top: 0; }
   95% {
-    background-position: 0px 100%; }
-  100% {
-    background-position: 0px 100%; } }
+    top: -100%; }
+  1000% {
+    top: -100%; } }
 
 .visually-hidden {
   position: absolute !important;
