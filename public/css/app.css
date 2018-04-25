@@ -440,7 +440,13 @@ section.project-featured, article.project-featured {
       line-height: 1.25;
       font-size: 1.125rem;
       color: #282828;
-      font-weight: 400; }
+      font-weight: 400;
+      white-space: pre-line; }
+    section.project-featured .project-featured_info h4, article.project-featured .project-featured_info h4 {
+      font-size: 1.375rem;
+      color: #555555;
+      line-height: 1;
+      padding: 15px 0 0; }
   section.project-featured .project-featured-container.active img, article.project-featured .project-featured-container.active img {
     animation-play-state: running; }
   section.project-featured.absolute, article.project-featured.absolute {
@@ -479,7 +485,9 @@ section.projects, article.projects {
     background: #efefef; }
     section.projects .projects-single .projects-header, article.projects .projects-single .projects-header {
       width: 100%;
-      position: relative; }
+      position: relative;
+      display: flex;
+      flex-direction: column-reverse; }
       section.projects .projects-single .projects-header .subTitle, article.projects .projects-single .projects-header .subTitle {
         color: #555555;
         font-weight: 400;

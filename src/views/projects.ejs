@@ -7,10 +7,10 @@
       <% for(var i = 0; i < data.length; i++) {%>
         <article class="projects-single">
             <div class="projects-header">
-              <h2 class="subTitle">Rol: <%= data[i].rol %></h3>
-              <h1 class="title"><%= data[i].name %></h2>
+              <h2 class="title"><%= data[i].name %></h2>
+              <h3 class="subTitle">Rol: <%= data[i].rol %></h3>
               <div class="tags">
-                <h3 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data[i].name %></span>:</h3>
+                <h4 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data[i].name %></span>:</h3>
                 <ul>
                   <% for(var k = 0; k < data[i].code.length; k++) {%>
                     <li>
