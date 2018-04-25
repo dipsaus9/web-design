@@ -1,7 +1,7 @@
 <% var headerData = name; %>
 <% include base/head.ejs %>
 <main tabindex="-1" id="content" >
-  <section class="bio">
+  <article class="bio">
     <div class="row">
       <div class="bio-image">
         <div class="bio-image_photo">
@@ -9,8 +9,7 @@
         </div>
       </div>
       <div class="bio-info">
-        <h1 class="subTitle">Biografie:</h3>
-        <h2 class="title">Dennis Spierenburg</h1>
+        <h1 class="subTitle">Biografie: <span class="title">Dennis Spierenburg</span></h3>
         <p>
           Ik ben een 21 jarige student wonend in Amsterdam. Op dit moment studeer ik Communication and Multimedia Design aan de Hogeschool van Amsterdam.
           Naast mijn studie heb ik een passie voor het maken van applicaties / websites en werk ik dit graag uit. Op deze website beschrijf ik een aantal projecten waar ik aan heb gewerkt.
@@ -18,14 +17,16 @@
       </div>
       <div class="quote">
         <blockquote lang="en">
-          If you won't challenge me, don't bother me
+          <p>
+            If you won't challenge me, don't bother me
+          </p>
         </blockquote>
         <div class="author">
-          <small class="author-text">Dipsaus</small>
+          <p class="author-text"><span class="visually-hidden">Quote geschreven door </span>Dipsaus</p>
         </div>
       </div>
     </div>
-  </section>
+  </article>
   <!-- <section class="experience">
     <div class="row">
       <div class="experience-header">
@@ -129,19 +130,26 @@
       </div>
     </div>
   </section> -->
-  <section class="project-featured">
+  <article class="project-featured">
     <div class="project-featured-container row">
       <div class="project-featured_image-info">
-        <h1 class="subTitle" lang="en">Featured project:</h3>
-        <h2 class="title"><%= data.name %></h2>
+        <h1 class="subTitle" lang="en">Featured project: <span class="title"><%= data.name %></span></h3>
+        <!-- <h2 class="title"><%= data.name %></h2> -->
+        <div class="tags">
+          <h3 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data.name %></span>:</h3>
+          <ul>
+            <% for(var i = 0; i < data.code.length; i++) {%>
+              <li>
+                <%= data.code[i] %>
+              </li>
+              <% } %>
+          </ul>
+        </div>
       </div>
       <div class="project-featured_image ratio">
-        <figure>
-          <img alt="" src="<%= data.fullImage %>"/>
-          <figcaption class="visaully-hidden">
-            Dit figuur is een representatie van de home page van <%= data.name %>. De home page van deze website bevat een map met alle locaties van de huizen die op dit moment te koop of te huur zijn in de gemeente Bergen op Zoom. Ook wordt hier beschreven hoe duur deze huizen zijn waarna je vervolgens verder kan kijken op een overzicht pagina.
-          </figcaption>
-        </figure>
+        <div class="figure <% if(!data.gif){%> image <% } else{ %> gif <% } %>">
+          <img alt="<%= data.alt %>" src="<%= data.fullImage %>"/>
+        </div>
       </div>
       <div class="project-featured_links">
         <a class="direct" href="/projects/<%= data.url %>">Lees meer <span class="visually-hidden">over het project <%= data.name %></span></a>
@@ -149,6 +157,6 @@
       </div>
     </div>
   </div>
-</section>
+</article>
 </main>
 <% include base/footer.ejs %>

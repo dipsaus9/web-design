@@ -3,28 +3,27 @@
 <main tabindex="-1" id="content" >
   <section class="projects">
     <div class="row">
-      <h1 class="subTitle">Portfolio:</h3>
-      <h2 class="title">Overzicht</h1>
+      <h1 class="subTitle">Portfolio: <span class="title">Overzicht</span></h3>
       <% for(var i = 0; i < data.length; i++) {%>
         <article class="projects-single">
             <div class="projects-header">
               <h2 class="subTitle">Rol: <%= data[i].rol %></h3>
               <h1 class="title"><%= data[i].name %></h2>
               <div class="tags">
+                <h3 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data[i].name %></span>:</h3>
                 <ul>
-                  <li>
-                    Test
-                  </li>
+                  <% for(var k = 0; k < data[i].code.length; k++) {%>
+                    <li>
+                      <%= data[i].code[k] %>
+                    </li>
+                    <% } %>
                 </ul>
               </div>
             </div>
             <div class="projects-image ratio">
-              <figure>
-                <img src="<%= data[i].fullImage %>" alt=""/>
-                <figcaption>
-                  Test
-                </figcaption>
-              </figure>
+              <div class="figure <% if(!data[i].gif){%> image <% } else{ %> gif <% } %>">
+                <img src="<%= data[i].fullImage %>" alt="<%= data[i].alt %>"/>
+              </div>
             </div>
           <div class="projects-info">
             <p>

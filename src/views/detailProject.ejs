@@ -1,6 +1,35 @@
 <% var headerData = name; %>
 <% include base/head.ejs %>
 <main>
-<h1>Project detail</h1>
+  <article class="project-featured absolute">
+    <div class="project-featured-container row">
+      <div class="project-featured_image-info">
+        <h1 class="subTitle" lang="en">Detail project: <span class="title"><%= data.name %></span></h3>
+        <div class="tags">
+          <h3 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data.name %></span>:</h3>
+          <ul>
+            <% for(var i = 0; i < data.code.length; i++) {%>
+              <li>
+                <%= data.code[i] %>
+              </li>
+              <% } %>
+          </ul>
+        </div>
+      </div>
+      <div class="project-featured_image ratio">
+        <div class="figure <% if(!data.gif){%> image <% } else{ %> gif <% } %>">
+          <img alt="<%= data.alt %>" src="<%= data.fullImage %>"/>
+        </div>
+      </div>
+      <div class="project-featured_info">
+        <h3>Beschrijving: <span class="visually-hidden">van het project <%= data.name %></span></h3>
+        <p>
+          <%= data.beschrijving %>
+        </p>
+        <a class="button" href="/projects">Naar overzicht</a>
+      </div>
+    </div>
+  </div>
+</article>
 </main>
 <% include base/footer.ejs %>
