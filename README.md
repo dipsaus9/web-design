@@ -74,10 +74,32 @@ The home page should be providing information about me. I've devided this into t
     4. Button
 
 ### Detail page
+1. Project
+    1. Role
+    2. Title
+    3. Image (animation)
+    4. Button
 
+## Test
+For this project I tested my website with Larissa. Larissa is blind and uses a screenreader to visit any website. Therefor I made all elements accessiable for all users. I tested the home page, project page and a detail page.
 
-### Contact page
+### Results
+I've made a few notition during my test:
 
+- Skip content is a good element
+- She finds the information about me really fast
+- Lost view in projects page
+- Title of project page wasn't obvious
+- Rol was niet helemaal duidelijk
+- Too many headings
+- Alt tag for image a bit too big
+
+The funny part of these result is that I thought these problems wouldn't be a issue cause I tested this multiple times. But Larissa found them more difficult to understand. She also said I made a good strucutre but she didn't expect the page to have a good and logical structure.
+
+For my next project I'll create less headings for each page. Larissa also said a page should have only one H1 title while each article could have a H1.
+
+### Test 2
+I also talked to Larissa after the test and I explained my idea and the structure of the page to her. She said to me that it made sense after I've explained it to her. She also said that she didn't expect it to make sense so she was confused the first time. She recommended a title attribute to explain the structure for blind users. 
 
 ## Feedback / To Do
 While working on this project I got some feedback from my fellow students, teachers and users. I'll descirbe them here in a to do list.
