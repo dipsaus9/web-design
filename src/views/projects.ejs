@@ -1,21 +1,29 @@
 <% var headerData = name; %>
 <% include base/head.ejs %>
-<main>
+<main tabindex="-1" id="content" >
   <section class="projects">
     <div class="row">
-      <h3>Portfolio:</h3>
-      <h1>Overzicht</h1>
+      <h1 class="subTitle">Portfolio: <span class="title">Overzicht</span></h3>
       <% for(var i = 0; i < data.length; i++) {%>
-        <div class="projects-single">
+        <article class="projects-single">
             <div class="projects-header">
-              <h3>Rol: <%= data[i].rol %></h3>
-              <h2><%= data[i].name %></h2>
+              <h2 class="title"><%= data[i].name %></h2>
+              <h3 class="subTitle">Rol: <%= data[i].rol %></h3>
+              <div class="tags">
+                <h4 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data[i].name %></span>:</h3>
+                <ul>
+                  <% for(var k = 0; k < data[i].code.length; k++) {%>
+                    <li>
+                      <%= data[i].code[k] %>
+                    </li>
+                    <% } %>
+                </ul>
+              </div>
             </div>
             <div class="projects-image ratio">
-              <a href="/projects/<%= data[i].url %>"><span class="visually-hidden">Lees verder over <%= data[i].name %></span>
-                <div class="projects-image-photo" style="background-image: url('<%= data[i].fullImage %>'); ">
-                </div>
-              </a>
+              <div class="figure <% if(!data[i].gif){%> image <% } else{ %> gif <% } %>">
+                <img src="<%= data[i].fullImage %>" alt="<%= data[i].alt %>"/>
+              </div>
             </div>
           <div class="projects-info">
             <p>
@@ -23,7 +31,7 @@
             </p>
             <a href="/projects/<%= data[i].url %>">Lees verder <span class="visually-hidden">over <%= data[i].name %></span></a>
           </div>
-        </div>
+        </article>
       <% } %>
     </div>
   </section>

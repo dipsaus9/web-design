@@ -4,21 +4,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#FFFFFF">
   <link rel="stylesheet" href="/css/app.css">
+  <title>Portfolio website van Dennis Spierenburg</title>
 </head>
 <body>
 <header>
-  <nav>
-    <ul>
-      <li>
-        <a class="<% if(headerData == 'home'){ %> active <% } %>" href="/">Biografie</a>
-      </li>
+  <div class="header-container">
+    <a href="#content" class="skip-content">Ga direct naar de content</a>
+    <h1><a href="/">Dip Development</a></h1>
+    <nav>
+      <ul>
         <li>
-          <a class="<% if(headerData == 'overzicht'){ %> active <% } %>" href="/projects">Werk</a>
+          <a class="<% if(headerData == 'home'){ %> active <% } %>" href="/">Biografie</a>
         </li>
-        <li>
-          <a class="<% if(headerData == 'contact'){ %> active <% } %>" href="/contact">Contact</a>
+          <li>
+            <a class="<% if(headerData == 'overzicht'){ %> active <% } %>" href="/projects">Werk</a>
+          </li>
+          <li>
+            <a class="<% if(headerData == 'contact'){ %> active <% } %>" href="/contact">Contact</a>
+          </li>
         </li>
-      </li>
-    </ul>
-  </nav>
+      </ul>
+    </nav>
+  </div>
 </header>

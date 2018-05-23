@@ -37,6 +37,7 @@ I've used this principle by creating large padding and only one action for each 
 
 After each step / state on a website you want to continue reading on the page. With these ideas I wanted to create my website. So after each project you find another project I've been working on. Each step you take would follow by a next step.
 
+<<<<<<< HEAD
 ## Principles to the usecase
 Clarity and one primary action are really important for me in this project. When you create a good flow using these principles principle 8 will follow, a natural next step. I created a big text, a big image and a lot of spacing in my homepage so the user can focus on one action per state. They can see what is comming next but they won´t be distracted from it (see image).
 
@@ -50,7 +51,7 @@ Each website should have a good structure. A link should always make sense and e
 ### Home page
 The home page should be providing information about me. I've devided this into the following order (ordered by logical hierarchy):
 
-1. Biografy
+1. Biography
     1. Subtitle
     2. Name
     2. Images
@@ -79,10 +80,30 @@ The home page should be providing information about me. I've devided this into t
     3. Image (animation)
     4. Button
 
-## Detail page
+### Detail page
+1. Project
+    1. Role
+    2. Title
+    3. Image (animation)
+    4. Button
 
+## Test
+For this project I tested my website with Larissa. Larissa is blind and uses a screenreader to visit any website. Therefor I made all elements accessiable for all users. I tested the home page, project page and a detail page.
 
-## Contact page
+### Results
+I've made a few notition during my test:
+
+- Skip content is a good element
+- She finds the information about me really fast
+- Lost view in projects page
+- Title of project page wasn't obvious
+- Rol was niet helemaal duidelijk
+- Too many headings
+- Alt tag for image a bit too big
+
+The funny part of these result is that I thought these problems wouldn't be a issue cause I tested this multiple times. But Larissa found them more difficult to understand. She also said I made a good strucutre but she didn't expect the page to have a good and logical structure.
+
+For my next project I'll create less headings for each page. Larissa also said a page should have only one H1 title while each article could have a H1.
 
 
 ## Feedback / To Do

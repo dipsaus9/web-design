@@ -1,26 +1,33 @@
 <% var headerData = name; %>
 <% include base/head.ejs %>
-<main>
-  <section class="bio">
+<main tabindex="-1" id="content" >
+  <article class="bio">
     <div class="row">
       <div class="bio-image">
         <div class="bio-image_photo">
-          <img src="" />
+          <img src="/images/me.jpg" alt="Foto van Dennis Spierenburg"/>
         </div>
       </div>
       <div class="bio-info">
-        <h3>Biografie:</h3>
-        <h1>Dennis Spierenburg</h1>
+        <h1 class="subTitle">Biografie: <span class="title">Dennis Spierenburg</span></h3>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+          Ik ben een 21 jarige student wonend in Amsterdam. Op dit moment studeer ik Communication and Multimedia Design aan de Hogeschool van Amsterdam.
+          Naast mijn studie heb ik een passie voor het maken van applicaties / websites en werk ik dit graag uit. Op deze website beschrijf ik een aantal projecten waar ik aan heb gewerkt.
         </p>
       </div>
+      <div class="quote">
+        <blockquote lang="en">
+          <p>
+            If you won't challenge me, don't bother me
+          </p>
+        </blockquote>
+        <div class="author">
+          <p class="author-text"><span class="visually-hidden">Quote geschreven door </span>Dipsaus</p>
+        </div>
+      </div>
     </div>
-  </section>
-  <section class="experience">
+  </article>
+  <!-- <section class="experience">
     <div class="row">
       <div class="experience-header">
           <h2>Vaardigheden</h2>
@@ -122,24 +129,34 @@
         </ul>
       </div>
     </div>
-  </section>
-  <section class="project-featured">
+  </section> -->
+  <article class="project-featured">
     <div class="project-featured-container row">
       <div class="project-featured_image-info">
-        <h3>Rol: <%= data.rol %></h3>
-        <h2><%= data.name %></h2>
+        <h1 class="subTitle" lang="en">Featured project: <span class="title"><%= data.name %></span></h3>
+        <!-- <h2 class="title"><%= data.name %></h2> -->
+        <div class="tags">
+          <h3 class="tags-header">Code<span class="visually-hidden"> gebruikt voor het project <%= data.name %></span>:</h3>
+          <ul>
+            <% for(var i = 0; i < data.code.length; i++) {%>
+              <li>
+                <%= data.code[i] %>
+              </li>
+              <% } %>
+          </ul>
+        </div>
       </div>
       <div class="project-featured_image ratio">
-        <div class="project-featured_image-photo" style="background-image: url('<%= data.fullImage %>'); ">
-
+        <div class="figure <% if(!data.gif){%> image <% } else{ %> gif <% } %>">
+          <img alt="<%= data.alt %>" src="<%= data.fullImage %>"/>
         </div>
       </div>
       <div class="project-featured_links">
-        <a class="direct" href="/projects/<%= data.url %>">Kijk verder <span class="visually-hidden">over <%= data.name %></span></a>
-        <a class="overview" href="/projects">Bekijk overzicht</a>
+        <a class="direct" href="/projects/<%= data.url %>">Lees meer <span class="visually-hidden">over het project <%= data.name %></span></a>
+        <a class="overview" href="/projects">Bekijk overzicht <span class="visually-hidden">van alle projecten</span></a>
       </div>
     </div>
   </div>
-</section>
+</article>
 </main>
 <% include base/footer.ejs %>
