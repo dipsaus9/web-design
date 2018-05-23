@@ -37,11 +37,10 @@ I've used this principle by creating large padding and only one action for each 
 
 After each step / state on a website you want to continue reading on the page. With these ideas I wanted to create my website. So after each project you find another project I've been working on. Each step you take would follow by a next step.
 
-<<<<<<< HEAD
 ## Principles to the usecase
 Clarity and one primary action are really important for me in this project. When you create a good flow using these principles principle 8 will follow, a natural next step. I created a big text, a big image and a lot of spacing in my homepage so the user can focus on one action per state. They can see what is comming next but they won´t be distracted from it (see image).
 
-![image of first state](https://github.com/dipsaus9/web-design/first_state.png)
+![image of first state](https://github.com/dipsaus9/web-design/blob/week1/first_state.png)
 
 In this image you can see the spacing I created here. This will give the user more time to think and read the text first. In later development I tested this and it resulted that with a little adjustment this really works. Cause you can see the next step in the bottom of the screen people are tended to scroll to this following a natural next step.
 
